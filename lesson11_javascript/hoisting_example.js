@@ -1,5 +1,5 @@
-// console.log(a1);
-// console.log(a2);
+// console.log(a1);   // undefined
+// console.log(a2);   // undefined
 console.log(f1);
 
 let a1 = 19;
