@@ -17,19 +17,38 @@
 <body>
 <p id="demo">JavaScript can change HTML content.</p>
 <div onclick="console.log(3)"></div>
+<div class="box1"></div>
+
+// method 3 (not recommended, not separated)
 <button onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"' type="button">Click Me!</button>
 
-<div class="box" id="wrapper"></div>
+<div class="box2" id="wrapper"></div>
 <script type="text/javascript">
-  let odiv = document.getElementsByClassName('box')[0];
-  odiv.addEventListener('click', function () {
-    console.log(1);
-    odiv.style.backgroundColor = 'red';
+
+  let odiv1 = document.getElementsByClassName('box1')[0];
+  let odiv2 = document.getElementsByClassName('box2')[0];
+
+
+  // method 1 (override)
+  odiv1.onclick = function () {
+    console.log(11);
+    odiv1.style.backgroundColor = 'pink';
+  };
+  odiv1.onclick = function () {
+    console.log(21);
+    odiv1.style.backgroundColor = 'blue';
+  };
+
+
+  // method 2 (both executed)
+  odiv2.addEventListener('click', function () {
+    console.log(21);
+    odiv2.style.backgroundColor = 'red';
   }, false);
 
-  odiv.addEventListener('click', function () {
-    console.log(2);
-    odiv.style.backgroundColor = 'purple';
+  odiv2.addEventListener('click', function () {
+    console.log(22);
+    odiv2.style.backgroundColor = 'purple';
   }, false);
 </script>
 
