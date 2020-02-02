@@ -19,3 +19,21 @@ let res = add();
 console.log(add()());
 console.log(res);
 console.log(res());
+
+function practice1(a) {
+  let arr = [];
+
+  for (let i = 0; i < 4; i++) {
+    arr[i] = function () {
+      console.log(i);
+    };
+  }
+  return arr;
+}
+
+let sol = practice1();
+console.log(sol);
+
+for (let i = 0; i < sol.length; i++) {
+  sol[i]();
+}
