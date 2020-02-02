@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+<p id="demo">JavaScript can change HTML content.</p>
+<button onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"' type="button">Click Me!</button>
+
+<div class="box" id="wrapper"></div>
+<script type="text/javascript">
+  let odiv = document.getElementsByClassName('box')[0];
+  odiv.addEventListener('click', function () {
+    console.log(1);
+    odiv.style.backgroundColor = 'red';
+  }, false);
+
+  odiv.addEventListener('click', function () {
+    console.log(2);
+    odiv.style.backgroundColor = 'purple';
+  }, false);
+</script>
+
+</body>
+</html>

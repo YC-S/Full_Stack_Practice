@@ -1,0 +1,28 @@
+<!--/*-->
+<!--The Document Object Model (DOM) connects web pages to scripts or programming languages. Usually that means JavaScript.-->
+<!--The DOM model represents a document with a logical tree. DOM methods allow programmatic access to the tree; with them-->
+<!--you can change the document's structure, style or content. DOM nodes can have event handlers attached to them. Once an-->
+<!--event is triggered, the event handlers get executed.-->
+<!-- */-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <title>Document</title>
+</head>
+<body>
+<div class="box" id="wrapper"></div>
+<p data-age="10" data-name="Joe">this is Joe</p>
+<script type="text/javascript">
+  let p = document.getElementsByTagName('p')[0];
+  console.dir(p);
+
+  let data = p.dataset;
+  console.log(data['age']);
+</script>
+</body>
+</html>
