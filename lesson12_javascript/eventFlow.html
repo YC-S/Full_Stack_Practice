@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <title>Document</title>
+  <style>
+    #grandparent {
+      height: 300px;
+      width: 300px;
+      background-color: green;
+    }
+
+    #parent {
+      height: 200px;
+      width: 200px;
+      background-color: pink;
+    }
+
+    #child {
+      height: 100px;
+      width: 100px;
+      background-color: cadetblue;
+    }
+  </style>
+</head>
+<body>
+<div id="grandparent">
+  <div id="parent">
+    <div id="child"></div>
+  </div>
+</div>
+
+<script>
+  let gDiv = document.getElementById('grandparent');
+  let pDiv = document.getElementById('parent');
+  let cDiv = document.getElementById('child');
+
+  // if true: capture
+  // if false: bubble
+
+  gDiv.addEventListener('click', function () {
+    console.log("grandparent capture!");
+  }, true);
+
+  pDiv.addEventListener('click', function () {
+    console.log("parent capture!");
+  }, true);
+
+  cDiv.addEventListener('click', function () {
+    console.log("child capture!");
+  }, true);
+
+  gDiv.addEventListener('click', function () {
+    console.log("grandparent bubbling!");
+  }, false);
+
+  pDiv.addEventListener('click', function () {
+    console.log("parent bubbling!");
+  }, false);
+
+  cDiv.addEventListener('click', function () {
+    console.log("child bubbling!");
+  }, false);
+
+  // gDiv.onclick = function() {
+  //   console.log('gp')
+  // }
+  //
+  // pDiv.onclick = function() {
+  //   console.log('p')
+  // }
+  //
+  // cDiv.onclick = function() {
+  //   console.log('cp')
+  // }
+</script>
+</body>
+</html>
