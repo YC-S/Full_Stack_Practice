@@ -1,7 +1,6 @@
 // ============ 1. what is closure ==============
 // An inner function always has access to the vars and parameters of its outer function,
 // even after the outer function has returned
-
 function add() {
   // 局部变量 arg
   let n = 2;
