@@ -24,46 +24,65 @@
       width: 100px;
       background-color: cadetblue;
     }
+
+    #wrapper {
+      height: 200px;
+      width: 200px;
+      background-color: gray;
+    }
+
+    #apply {
+      height: 50px;
+      width: 50px;
+      background-color: yellowgreen;
+      margin-left: 100px;
+    }
   </style>
 </head>
 <body>
-<div id="grandparent">
-  <div id="parent">
-    <div id="child"></div>
+<!--<div id="grandparent">-->
+<!--  <div id="parent">-->
+<!--    <div id="child"></div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div id="wrapper">
+  <div id="apply">
+
   </div>
 </div>
 
 <script>
-  let gDiv = document.getElementById('grandparent');
-  let pDiv = document.getElementById('parent');
-  let cDiv = document.getElementById('child');
+  // let gDiv = document.getElementById('grandparent');
+  // let pDiv = document.getElementById('parent');
+  // let cDiv = document.getElementById('child');
 
   // if true: capture
   // if false: bubble
 
-  gDiv.addEventListener('click', function () {
-    console.log("grandparent capture!");
-  }, true);
-
-  pDiv.addEventListener('click', function () {
-    console.log("parent capture!");
-  }, true);
-
-  cDiv.addEventListener('click', function () {
-    console.log("child capture!");
-  }, true);
-
-  gDiv.addEventListener('click', function () {
-    console.log("grandparent bubbling!");
-  }, false);
-
-  pDiv.addEventListener('click', function () {
-    console.log("parent bubbling!");
-  }, false);
-
-  cDiv.addEventListener('click', function () {
-    console.log("child bubbling!");
-  }, false);
+  // gDiv.addEventListener('click', function () {
+  //   console.log("grandparent capture!");
+  // }, true);
+  //
+  // pDiv.addEventListener('click', function () {
+  //   console.log("parent capture!");
+  // }, true);
+  //
+  // cDiv.addEventListener('click', function () {
+  //   console.log("child capture!");
+  // }, true);
+  //
+  // gDiv.addEventListener('click', function () {
+  //   console.log("grandparent bubbling!");
+  // }, false);
+  //
+  // pDiv.addEventListener('click', function () {
+  //   console.log("parent bubbling!");
+  // }, false);
+  //
+  // cDiv.addEventListener('click', function () {
+  //   console.log("child bubbling!");
+  // }, false);
 
   // gDiv.onclick = function() {
   //   console.log('gp')
@@ -76,6 +95,20 @@
   // cDiv.onclick = function() {
   //   console.log('cp')
   // }
+
+  // 3. cancel bubbling or capture
+  let wrapper = document.getElementsByClassName('wrapper')[0];
+  let apply = document.getElementsByClassName('apply')[0];
+
+  wrapper.addEventListener('click', function (e) {
+    console.log('...wrapper...')
+    // e.stopPropagation();
+  }, true);
+
+  apply.addEventListener('click', function (e) {
+    console.log('...apply...')
+    // e.stopPropagation();
+  }, true);
 </script>
 </body>
 </html>
