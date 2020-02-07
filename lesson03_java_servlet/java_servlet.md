@@ -4,7 +4,7 @@
 
 * Create your first servlet to implement a simple service
 
-  ![image-20200206234348284](image-20200206234348284.png)
+  ![image-20200206234348284](img/image-20200206234348284.png)
 
 ## Recap of Previous Lessons
 
@@ -21,13 +21,13 @@ Apache Tomcat, often referred to as Tomcat Server, is an open-source Java Servle
 
 ### HTTP request and response
 
-![image-20200206234424491](image-20200206234424491.png)
+![image-20200206234424491](img/image-20200206234424491.png)
 
-![image-20200206234430018](image-20200206234430018.png)
+![image-20200206234430018](img/image-20200206234430018.png)
 
 #### HTTP request method
 
-![image-20200206234440907](image-20200206234440907.png)
+![image-20200206234440907](img/image-20200206234440907.png)
 
 HTTP supports all CRUD (Create/Read/Update/Delete) operations. Two commonly used methods are:
 
@@ -39,7 +39,7 @@ There are also other methods like delete, put, etc. In our application, we’ll 
 
 #### Resource Path
 
-![image-20200206234457537](image-20200206234457537.png)
+![image-20200206234457537](img/image-20200206234457537.png)
 
 A URL is used to uniquely identify a resource over the web. URL has the following syntax:
 
@@ -55,9 +55,9 @@ https://www.youtube.com/results?search_query=laioffer
 
 #### HTTP request/response body
 
-![image-20200206234513568](image-20200206234513568.png)
+![image-20200206234513568](img/image-20200206234513568.png)
 
-![image-20200206234523512](image-20200206234523512.png)
+![image-20200206234523512](img/image-20200206234523512.png)
 
 A message body is the one which carries the actual HTTP request data (including form data and uploaded etc.) and HTTP response data from the server ( including files, images etc). Normally we don’t return static HTML code to frontend directly because it should be created by frontend developer. We just need to return correct data that should be displayed by frontend. In our project, we’ll use JSON as for body format.
 
@@ -85,47 +85,47 @@ JSON(JavaScript Object Notation)
 
 1. Step 1, Open Eclipse and make sure your project is still there.
 
-   ![image-20200206234932227](image-20200206234932227.png)
+   ![image-20200206234932227](img/image-20200206234932227.png)
 
 2. Step 2, Right click your project and create a new Servlet.
 
-   ![image-20200206234954183](image-20200206234954183.png)
+   ![image-20200206234954183](img/image-20200206234954183.png)
 
 3. Step 3, Under Create Servlet window, use **SearchItem** as the Class name and **rpc** as Java package, then click Next.
 
-   ![image-20200206235025563](image-20200206235025563.png)
+   ![image-20200206235025563](img/image-20200206235025563.png)
 
 4. Step 4, Double click /SearchItem under URL mappings and update it to /search, then click OK to close the popup window.
 
-   ![image-20200206235056659](image-20200206235056659.png)
+   ![image-20200206235056659](img/image-20200206235056659.png)
 
 5. Step 5, Click Finish and Eclipse will create a Java class called SearchItem for you.
 
-   ![image-20200206235132103](image-20200206235132103.png)
+   ![image-20200206235132103](img/image-20200206235132103.png)
 
 6. Step 6, Repeat the previous three steps to create another Servlet called **RecommendItem**. Make sure you use the same **rpc** package, and rename the URL mapping to **/recommendation**.
 
-   ![image-20200206235155932](image-20200206235155932.png)
+   ![image-20200206235155932](img/image-20200206235155932.png)
 
-   ![image-20200206235202666](image-20200206235202666.png)
+   ![image-20200206235202666](img/image-20200206235202666.png)
 
 ## Implement Your First Java Servlet
 
 1. Step 1, Open SearchItem in your Eclipse and make sure there’s no error in your code.
 
-   ![image-20200206235302136](image-20200206235302136.png)
+   ![image-20200206235302136](img/image-20200206235302136.png)
 
 2. Step 2, Right click ‘Tomcat v9.0 Server at localhost’ and click ‘Start’.
 
-![image-20200206235322815](image-20200206235322815.png)
+![image-20200206235322815](img/image-20200206235322815.png)
 
 3. Step 3, Open your Chrome browser and type the following URL in the address bar: http://localhost:8080/jupiter/search, make sure you can see the similar result.
 
-   ![image-20200206235336461](image-20200206235336461.png)
+   ![image-20200206235336461](img/image-20200206235336461.png)
 
 4. Step 4, Go back to your Eclipse and open pom.xml file, then add org.json as a dependency of your project.
 
-   ![image-20200206235408208](image-20200206235408208.png)
+   ![image-20200206235408208](img/image-20200206235408208.png)
 
    ```xml
    <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -164,7 +164,7 @@ JSON(JavaScript Object Notation)
 
 5. Step 5, Save your changes in pom.xml and rerun Maven Install to download the new json library.
 
-   ![image-20200206235455934](image-20200206235455934.png)
+   ![image-20200206235455934](img/image-20200206235455934.png)
 
 6. Step 6, Go back to SearchItem and update doGet() to return json format data as response. You also need to import three new libraries in your code.
 
@@ -229,11 +229,11 @@ JSON(JavaScript Object Notation)
 
 7. Step 7, save your changes and restart your Tomcat server.
 
-   ![image-20200206235625621](image-20200206235625621.png)
+   ![image-20200206235625621](img/image-20200206235625621.png)
 
 8. Step 8, Use the same URL http://localhost:8080/jupiter/search to test your service. Make sure you can see the following result.
 
-   ![image-20200206235644738](image-20200206235644738.png)
+   ![image-20200206235644738](img/image-20200206235644738.png)
 
 9. Step 9, Since our project should project dynamic services to users, it should be able to return different results based on different parameters from user input. Update the code in doGet() method to make the code check username parameter from user request.
 
@@ -301,7 +301,7 @@ JSON(JavaScript Object Notation)
 
     http://localhost:8080/jupiter/search?username=1234 in the address bar and make sure you can see a similar result.
 
-    ![image-20200206235735978](image-20200206235735978.png)
+    ![image-20200206235735978](img/image-20200206235735978.png)
 
 11. Step 11, Now update your doGet() method again to return a JSONArray format data in response. JSONArrray is the structure which contains a series of JSONObject. Again, don’t forget to import org.json.JSONArray in your code.
 
@@ -370,7 +370,7 @@ JSON(JavaScript Object Notation)
 
     http://localhost:8080/jupiter/search
 
-    ![image-20200206235835452](image-20200206235835452.png)
+    ![image-20200206235835452](img/image-20200206235835452.png)
 
 ## Implement The Second Servlet
 
@@ -449,17 +449,17 @@ JSON(JavaScript Object Notation)
 
 2. Step 2, Save your changes and restart your server, then use the following URL to test the result: http://localhost:8080/jupiter/recommendation. 
 
-   ![image-20200207000026542](image-20200207000026542.png)
+   ![image-20200207000026542](img/image-20200207000026542.png)
 
 ## Add RpcHelper Utility Class
 
 1. Step 1, to reduce some duplicate codes, add a new utility class called RpcHelper to handle all rpc parsing codes. Right click on package ‘rpc’ and choose New->Class. **Careful, choose class instead of servlet.**
 
-   ![image-20200207000058095](image-20200207000058095.png)
+   ![image-20200207000058095](img/image-20200207000058095.png)
 
 2.Step 2, Use rpc as package name and RpcHelper as class name, and then click Finish.
 
-![image-20200207000114822](image-20200207000114822.png)
+![image-20200207000114822](img/image-20200207000114822.png)
 
  3. Step 3, Create two functions in this class, named writeJsonObject and writeJsonArray.
 
