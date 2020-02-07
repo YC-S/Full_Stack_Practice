@@ -459,7 +459,7 @@ JSON(JavaScript Object Notation)
 
 2. Step 2, Use rpc as package name and RpcHelper as class name, and then click Finish.
 
-![image-20200207000114822](img/image-20200207000114822.png)
+    ![image-20200207000114822](img/image-20200207000114822.png)
 
  3. Step 3, Create two functions in this class, named writeJsonObject and writeJsonArray.
 
