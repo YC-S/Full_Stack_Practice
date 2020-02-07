@@ -3,7 +3,7 @@
 * Implement Item History servlet to serve history related requests.
 * Make search results aware of favorite items.
 
-![image-20200206212451971](img/image-20200206212451971.png)
+    ![image-20200206212451971](img/image-20200206212451971.png)
 
 ## Recap
 ### Database and Database Management System
@@ -16,7 +16,7 @@ with end-users, other applications, and the database itself to capture and analy
 * Amazon RDS: Amazon Relational Database Service (Amazon RDS) makes it easy to set up, operate, and scale a relational database in the cloud.
 * Tables for Jupiter Project
 
-![image-20200206212505030](img/image-20200206212505030.png)
+    ![image-20200206212505030](img/image-20200206212505030.png)
 
 ### Create MySQL Tables with Java
 * JDBC: JDBC (Java Database Connectivity) provides interfaces and classes for writing database operations. Technically speaking, JDBC is a standard API that defines how Java programs access database management systems.
@@ -353,7 +353,7 @@ with end-users, other applications, and the database itself to capture and analy
 
    Make sure you can see some search results in response. We’ll use them in next step.
 
-![image-20200206214250346](img/image-20200206214250346.png)
+    ![image-20200206214250346](img/image-20200206214250346.png)
 
 3. Step 3, Open another window in Postman and put http://localhost:8080/jupiter/history in the address bar, then change the HTTP method to Post.
 
@@ -378,9 +378,9 @@ with end-users, other applications, and the database itself to capture and analy
 
 6. Step 6,  Repeat the previous two steps to save some other items, make sure the item_id for each item is different.
 
-![image-20200206214457285](img/image-20200206214457285.png)
+    ![image-20200206214457285](img/image-20200206214457285.png)
 
-![image-20200206214511569](img/image-20200206214511569.png)
+    ![image-20200206214511569](img/image-20200206214511569.png)
 
 7. Step 7, Open MySQL Wordbench and connect to your MySQL instance on RDS.
 
@@ -423,7 +423,7 @@ with end-users, other applications, and the database itself to capture and analy
 
 11. Step 11, Click Send and make sure you can see the successful response.
 
-![image-20200206215023776](img/image-20200206215023776.png)
+    ![image-20200206215023776](img/image-20200206215023776.png)
 
 12. Step 12, Go back to MySQL Workbench and execute the same query. Make sure you can see one favorite item is removed from history table.
 
@@ -433,7 +433,7 @@ with end-users, other applications, and the database itself to capture and analy
 
 **Sample request**
 
-![image-20200206215208003](img/image-20200206215208003.png)
+    ![image-20200206215208003](img/image-20200206215208003.png)
 
 ### Update MySQLConnection and ItemHistory to Read Favorite Items
 
