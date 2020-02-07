@@ -457,7 +457,7 @@ JSON(JavaScript Object Notation)
 
    ![image-20200207000058095](img/image-20200207000058095.png)
 
-2.Step 2, Use rpc as package name and RpcHelper as class name, and then click Finish.
+2. Step 2, Use rpc as package name and RpcHelper as class name, and then click Finish.
 
 ![image-20200207000114822](img/image-20200207000114822.png)
 
@@ -482,59 +482,59 @@ JSON(JavaScript Object Notation)
     }
     ```
 
-	4. Step 4, Update both writeJsonObject() and writeJsonArray().
+4. Step 4, Update both writeJsonObject() and writeJsonArray().
 
-    ```java
-    public class RpcHelper {
-    	// Writes a JSONArray to http response.
-    	public static void writeJsonArray(HttpServletResponse response, JSONArray array) throws IOException {
-    		response.setContentType("application/json");
-    		response.getWriter().print(array);
-    	}
-    
-    	// Writes a JSONObject to http response.
-    	public static void writeJsonObject(HttpServletResponse response, JSONObject obj) throws IOException {
-    		response.setContentType("application/json");
-    		response.getWriter().print(obj);
-    	}
-    }
-    ```
+   ```java
+   public class RpcHelper {
+   	// Writes a JSONArray to http response.
+   	public static void writeJsonArray(HttpServletResponse response, JSONArray array) throws IOException {
+   		response.setContentType("application/json");
+   		response.getWriter().print(array);
+   	}
+   
+   	// Writes a JSONObject to http response.
+   	public static void writeJsonObject(HttpServletResponse response, JSONObject obj) throws IOException {
+   		response.setContentType("application/json");
+   		response.getWriter().print(obj);
+   	}
+   }
+   ```
 
-	5. Step 5, (Optional) Update doGet() method of SearchItem.java to use the new utility function.
+5. Step 5, (Optional) Update doGet() method of SearchItem.java to use the new utility function.
 
-    ```java
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-    			throws ServletException, IOException {
-    		
-    		JSONArray array = new JSONArray();
-    		try {
-    			array.put(new JSONObject().put("username", "abcd"));
-    			array.put(new JSONObject().put("username", "1234"));
-    		} catch (JSONException e) {
-    			// TODO Auto-generated catch block
-    			e.printStackTrace();
-    		}
-    		RpcHelper.writeJsonArray(response, array);
-    	}
-    ```
+   ```java
+   protected void doGet(HttpServletRequest request, HttpServletResponse response)
+   			throws ServletException, IOException {
+   		
+   		JSONArray array = new JSONArray();
+   		try {
+   			array.put(new JSONObject().put("username", "abcd"));
+   			array.put(new JSONObject().put("username", "1234"));
+   		} catch (JSONException e) {
+   			// TODO Auto-generated catch block
+   			e.printStackTrace();
+   		}
+   		RpcHelper.writeJsonArray(response, array);
+   	}
+   ```
 
-	6. Step 6, (Optional) Similar update for doGet() in RecommendItem.java.
+6. Step 6, (Optional) Similar update for doGet() in RecommendItem.java.
 
-    ```java
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-    			throws ServletException, IOException {
-    		
-    		JSONArray array = new JSONArray();
-    		try {
-    			array.put(new JSONObject().put("name", "abcd").put("address", "San Francisco").put("time", "01/01/2017"));
-    			array.put(new JSONObject().put("name", "1234").put("address", "San Jose").put("time", "01/01/2017"));
-    		} catch (JSONException e) {
-    			e.printStackTrace();
-    		}
-    
-    		RpcHelper.writeJsonArray(response, array);
-    	}
-    ```
+   ```java
+   protected void doGet(HttpServletRequest request, HttpServletResponse response)
+   			throws ServletException, IOException {
+   		
+   		JSONArray array = new JSONArray();
+   		try {
+   			array.put(new JSONObject().put("name", "abcd").put("address", "San Francisco").put("time", "01/01/2017"));
+   			array.put(new JSONObject().put("name", "1234").put("address", "San Jose").put("time", "01/01/2017"));
+   		} catch (JSONException e) {
+   			e.printStackTrace();
+   		}
+   
+   		RpcHelper.writeJsonArray(response, array);
+   	}
+   ```
 
 ## Design of Backend Services(RESTful)
 
