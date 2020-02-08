@@ -67,7 +67,7 @@ What is the classpath
 
 * **Inheritance**: The process by which one class acquires the properties and functionalities of another class is called inheritance. Inheritance provides the idea of reusability of code and each subclass defines only those features that are unique to it, the rest of the features can be inherited from the parent class.
 
-  ![image-20200207221204028](img/image-20200207221204028.png)
+![image-20200207221204028](img/image-20200207221204028.png)
 
 * **Polymorphism:** It performs a single action in different ways.
 
