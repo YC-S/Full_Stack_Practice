@@ -76,8 +76,8 @@ While both == and === are called equality operators, they behave differently whe
 
 ```javascript
 {} === {}                   // false
-new String('foo') === 'foo'; // false
-new Number(10) === 10;       // false
+String('foo') === 'foo'; // false
+Number(10) === 10;       // false
 var foo = {};
 foo === foo;                 // true
 ```
