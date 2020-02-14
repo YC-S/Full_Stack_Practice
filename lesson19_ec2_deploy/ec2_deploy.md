@@ -6,9 +6,9 @@
 
 ## Cloud Computing Introduction
 
-Cloud computing is the delivery of on-demand computing resources—everything from applications to data centers—over the Internet on a pay-for-use basis.
+Cloud computing is the delivery of on-demand computing resources - everything from applications to data centers—over the Internet on a pay-for-use basis.
 
-- Since 2006 when Amazon introduced the Elastic Compute Cloud
+* Since 2006 when Amazon introduced the Elastic Compute Cloud
 
 ## Service Models
 
