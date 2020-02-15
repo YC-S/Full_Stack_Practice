@@ -337,7 +337,7 @@ public class Application {
 - **Lightweight:** there is a slight overhead of using the framework in development
 - **Inversion of Control (IoC):** Spring container takes care of wiring dependencies of various objects, instead of creating or looking for dependent objects
 - **IoC container:** it manages Spring Bean life cycle and project specific configurations
-- **Spring is non inclusive:** That means you no need to implement any interface or inherit any class from spring to your classes, so whenever you want to change from spring to any other technology then you no need to change the logic of your class.
+- **Spring is non intrusive:** That means you no need to implement any interface or inherit any class from spring to your classes, so whenever you want to change from spring to any other technology then you no need to change the logic of your class.
 - **End to End Development** **:** Spring supports all aspects of application development, Web aspects, Business aspects, Persistence aspects, etc, so we can develop a complete application using spring.
 
 
