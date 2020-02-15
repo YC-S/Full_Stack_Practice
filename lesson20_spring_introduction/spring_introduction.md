@@ -121,7 +121,7 @@ The diagram above is a high-level view of how Spring works. Your application cla
 
 ## How to configure a class as Spring Bean？
 
-1) XML configuration
+### 1) XML configuration
 
 ![image-20200215115750800](img/image-20200215115750800.png)
 
