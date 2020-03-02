@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+  <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>-->
+  <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+  <link href="index.css" rel="stylesheet">
+</head>
+<body>
+<div id="root"></div>
+<h1>Hello ES6</h1>
+<script type="text/babel">
+  // ES6 / React / JSX code from here
+  class Animal {
+    constructor(name) {
+      this.name = name;
+    }
+
+    static walk() {
+      console.log('walk');
+    }
+
+    speak() {
+      console.log(this.name + ' makes a noise.');
+    }
+  }
+
+  class Dog extends Animal {
+    constructor(name, age) {
+      super(name);
+      this.age = age;
+    }
+
+    speak() {
+      console.log(this.name + ' barks at age ' + this.age);
+    }
+  }
+
+  const d = new Dog('Mitzie', 10);
+  d.speak(); // Mitzie barks.
+  Dog.walk(); // walk
+  Animal.walk(); // walk
+  d.walk(); // d.walk is not a function
+</script>
+
+
+</body>
+</html>
