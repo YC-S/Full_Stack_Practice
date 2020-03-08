@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+  <link href="./index.css" rel="stylesheet">
+  <meta charset="utf-8"/>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+  class App extends React.Component {
+    constructor() {
+      super();
+      this.state = {
+        a: 20,
+        b: 30,
+        c: 40,
+        d: 50
+      };
+    }
+
+    render() {
+      return (
+        // 2. use state
+        <div>
+          <button onClick={
+            () => {
+              this.setState({a: this.state.a + 10})
+            }
+          }>click
+          </button>
+          <button onClick={this.change.bind(this)}>click me</button>
+          {this.state.a}
+        </div>
+      )
+    }
+
+    change(args) {
+      this.setState({a: 999})
+    }
+  }
+
+  ReactDOM.render(
+    <App/>,
+    document.getElementById('root')
+  )
+</script>
+</body>
+</html>
+

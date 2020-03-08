@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+  <link href="./index.css" rel="stylesheet">
+  <meta charset="utf-8"/>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+  // ES6 / React / JSX code from here
+  // test 1
+  // const res = <div>
+  //   <h1>
+  //     I have a {8 < 4 ? 'dog' : 'cat'}
+  //   </h1>
+  // </div>
+  // ReactDOM.render(
+  //   res,
+  //   document.getElementById('root')
+
+  // test 2
+  const arr = ['apple', 'pear', 'berry'];
+  // const newArr = [];
+  // arr.forEach((item, index) => {
+  //   console.log(item);
+  //   const temp = <p key={index}>{item}</p>
+  //   newArr.push(temp);
+  // });
+  // console.log(newArr);
+
+  // test 3
+  // const res = arr.map((item, index) => {
+  //   return <p key={index}>{item}</p>
+  // });
+
+  // test 4
+  // function Name() {
+  //   //jsx -> virtual element
+  //   return virtual element;
+  // }
+  // define a component
+  // method1: fn -> component
+  // data -> props
+  function Hello(props) {
+    console.log(props);
+    console.log(props.mike);
+    console.log(props.lucy);
+    return <div>
+      <h1>{JSON.stringify(props)}</h1>
+      <h2>{3 > 2 ? "I have dog" : "I have cat"}</h2>
+      <h3>{}</h3>
+      <p>{props.mike.name}</p>
+      <p>{props.mike.age}</p>
+      <p>{
+        Object.keys(props).map((item, index) => {
+          console.log(props[item]);
+          return <p key={index}>{item}</p>
+        })
+      }</p>
+    </div>
+  }
+
+  const obj = {
+    name: 'Joe',
+    age: 10
+  };
+
+  const obj2 = {
+    name: 'Lucy',
+    age: 11
+  };
+
+  const obj3 = {
+    name: 'Mike',
+    age: 12
+  };
+
+  ReactDOM.render(
+    <Hello joes={obj} lucy={obj2} mike={obj3}/>,
+    document.getElementById('root')
+  )
+
+  // method2: class -> component
+  // class Hello extends React.Component {
+  //   render() {
+  //     return <h1>Hello React</h1>
+  //   }
+  // }
+
+  // ReactDOM.render(
+  //   <Hello />
+  //   document.getElementById('root')
+  // )
+
+  // class Hello extends React.Component {
+  //   constructor() {
+  //     super();
+  //   }
+  //
+  //   render() {
+  //     return <h1>Hello React</h1>
+  //   }
+  // }
+</script>
+</body>
+</html>
+
