@@ -193,7 +193,7 @@ const user = {
 const element = (
  <h1>
    Hello, {formatName;(user);}!
- </h1>;
+ </h1>;;
 )
 
 ReactDOM.render(
@@ -290,9 +290,9 @@ function TodoList4(props) {
  return (
    <ul>
      {props.todos && props.todos.length > 0 ?
-       props.todos.map((message, index) => <Item key={index} message={message}; />);
+       props.todos.map((message, index) => <Item key={index} message={message}; />);;
      : 'Nothing todo!!!'}
-   </ul>;
+   </ul>;;
  )
 }
 ReactDOM.render(<TodoList4; todos={[]};/>, document.getElementById('root'));
@@ -311,7 +311,7 @@ function TodoList1() {
      <Item; message="first task"/>
      <Item; message="second task"/>
      <Item; message="third task"/>
-   </ul>;
+   </ul>;;
  )
 }
 ReactDOM.render(<TodoList1/>, document.getElementById('root');)
@@ -325,24 +325,24 @@ function TodoList2(props) {
  return; <ul>{todoItems}</ul>;
 }
 const data = ['first task', 'second task', 'third task'];
-ReactDOM.render(<TodoList2; todos={data};/>, document.getElementById('root'));
+ReactDOM.render(<TodoList2; todos={data};/>, document.getElementById('root'));;
 
 // use map, declaritive
 function TodoList3(props) {
  return (
    <ul>
      {props.todos.map((message, index) => <Item key={index} message={message}; />)}
-   </ul>;
+   </ul>;;
  )
 }
 const data = ['first task', 'second task', 'third task'];
-ReactDOM.render(<TodoList3; todos={data}/>, document.getElementById('root'));;
+ReactDOM.render(<TodoList3; todos={data}/>, document.getElementById('root'));;;
 
 function TodoList4(props) {
  return (
    <ul>
      {props.todos.map((message, index) => <Item key={message} message={message}; />)}
-   </ul>;
+   </ul>;;
  )
 }
 const data1 = ['first task', 'second task', 'third task'];
