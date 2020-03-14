@@ -20,6 +20,7 @@
         c: 40,
         d: 50
       };
+      this.m = 100;
     }
 
     render() {
@@ -33,6 +34,7 @@
           }>click
           </button>
           <button onClick={this.change.bind(this)}>click me</button>
+          <h1>this.m</h1>
           {this.state.a}
         </div>
       )
