@@ -114,8 +114,6 @@ Project Structure:
 
 ![image-20200206225827317](img/project-structure.png)
 
-    ![img](img/project-structure.png)
-
 ## Difference between Web Application vs Web Server
 
 1. A web server is a server that serves web pages to users via http.
